@@ -1,14 +1,14 @@
-const newGameButton = document.querySelector(".new-game")
-const main = document.querySelector("main")
+const newGameButton = document.querySelector(".new-game");
+const main = document.querySelector("main");
 
 
 export function insertNewGameCard() {
-  main.appendChild(createNewGameCardElement())
+  main.appendChild(createNewGameCardElement());
 }
 
 function createNewGameCardElement() {
-  const card = document.createElement("div")
-  card.classList.add("new-game-card")
+  const card = document.createElement("div");
+  card.classList.add("new-game-card");
 
   card.innerHTML = `
     <p>Start new game</p>
@@ -21,7 +21,7 @@ function createNewGameCardElement() {
       <input type="radio" name="board-size" value="large" id="">
     </form>
     <button>GO</button>
-  `
+  `;
 
-  return card
+  return card;
 }
