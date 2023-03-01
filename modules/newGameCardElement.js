@@ -1,7 +1,7 @@
 export const newGameCardElement = document.createElement("div");
-export const startNewGameButton = document.createElement("button");
-startNewGameButton.classList.add("pill-button");
-startNewGameButton.textContent = "GO";
+export const startGameButton = document.createElement("button");
+startGameButton.classList.add("pill-button");
+startGameButton.textContent = "GO";
 
 newGameCardElement.classList.add("new-game-card");
 
@@ -16,4 +16,4 @@ newGameCardElement.innerHTML = `
     </form>
   `;
 
-newGameCardElement.appendChild(startNewGameButton);
+newGameCardElement.appendChild(startGameButton);

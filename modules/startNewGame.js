@@ -1,5 +1,5 @@
 import insertBoard from "./insertBoard";
-import { newGameCardElement, startNewGameButton } from "./newGameCardElement";
+import { newGameCardElement, startGameButton } from "./newGameCardElement";
 
 const newGameButton = document.querySelector(".new-game");
 const main = document.querySelector("main");
@@ -8,8 +8,8 @@ newGameButton.addEventListener("click", ()=> {
   insertNewGameCard();
 });
 
-startNewGameButton.addEventListener("click", ()=> {
-  startNewGame();
+startGameButton.addEventListener("click", ()=> {
+  startGame();
 });
 
 export function insertNewGameCard() {
@@ -23,7 +23,7 @@ export function insertNewGameCard() {
   main.appendChild(newGameCardElement);
 }
 
-export function startNewGame() {
+export function startGame() {
   const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
 
   insertBoard(boardSizeSelected);
