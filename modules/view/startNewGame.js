@@ -1,15 +1,10 @@
-import insertBoard from "./insertBoard";
-import { newGameCardElement, startGameButton } from "./newGameCardElement";
+import { newGameCardElement} from "./newGameCardElement";
 
-const newGameButton = document.querySelector(".new-game");
 const main = document.querySelector("main");
 
-newGameButton.onclick = insertNewGameCard;
-
-startGameButton.onclick  = startGame;
 
 export function insertNewGameCard() {
-  // remove board if it exists
+  // remove board if it exists 
   const board = document.querySelector(".board");
   if (board) {
     board.remove();
@@ -17,10 +12,4 @@ export function insertNewGameCard() {
 
   // should not add more card if there is already one
   main.appendChild(newGameCardElement);
-}
-
-export function startGame() {
-  const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
-
-  insertBoard(boardSizeSelected);
 }
