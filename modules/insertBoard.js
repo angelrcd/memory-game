@@ -1,6 +1,12 @@
 const main = document.querySelector("main");
 
 export default function insertBoard(size){
+  // remove board if it exists
+  const newGameCard = document.querySelector(".new-game-card");
+  if (newGameCard) {
+    newGameCard.remove();
+  }
+
   const board = document.createElement("div");
   board.classList.add("board");
   board.classList.add(size);

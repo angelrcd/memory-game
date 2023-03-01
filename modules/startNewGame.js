@@ -1,27 +1,30 @@
+import insertBoard from "./insertBoard";
+import { newGameCardElement, startNewGameButton } from "./newGameCardElement";
+
 const newGameButton = document.querySelector(".new-game");
 const main = document.querySelector("main");
 
+newGameButton.addEventListener("click", ()=> {
+  insertNewGameCard();
+});
+
+startNewGameButton.addEventListener("click", ()=> {
+  startNewGame();
+});
 
 export function insertNewGameCard() {
-  main.appendChild(createNewGameCardElement());
+  // remove board if it exists
+  const board = document.querySelector(".board");
+  if (board) {
+    board.remove();
+  }
+
+  // should not add more card if there is already one
+  main.appendChild(newGameCardElement);
 }
 
-function createNewGameCardElement() {
-  const card = document.createElement("div");
-  card.classList.add("new-game-card");
+export function startNewGame() {
+  const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
 
-  card.innerHTML = `
-    <p>Start new game</p>
-    <form name="cell-style-selection" action="">
-      <input type="radio" name="cell-style" value="Numbers" id="">
-      <input type="radio" name="cell-style" value="Icons" id="">
-    </form>
-    <form name="board-size-selection" action="">
-      <input type="radio" name="board-size" value="small" id="">
-      <input type="radio" name="board-size" value="large" id="">
-    </form>
-    <button>GO</button>
-  `;
-
-  return card;
+  insertBoard(boardSizeSelected);
 }
