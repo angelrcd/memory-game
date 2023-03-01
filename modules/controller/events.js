@@ -24,7 +24,7 @@ restartButton.onclick = ()=> {
 
 function startGame() {
   const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
-  const size = (boardSizeSelected === "small") ? 16 : 32;
+  const size = (boardSizeSelected === "small") ? 16 : 36;
 
   insertBoard(boardSizeSelected);
   restartBoard(size);

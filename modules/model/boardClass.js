@@ -6,6 +6,8 @@ export default class Board {
   }
 
   checkIndexCell(index){
+    console.log(this.cellList);
+    console.log(index);
     this.cellList[index].check();
   }
 }
