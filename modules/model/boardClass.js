@@ -4,6 +4,10 @@ export default class Board {
   constructor(boardSize) {
     this.cellList = shuffleArray(createArrOfCells(boardSize));
   }
+
+  checkIndexCell(index){
+    this.cellList[index].check();
+  }
 }
 
 function createArrOfCells(length){
