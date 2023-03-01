@@ -4,13 +4,9 @@ import { newGameCardElement, startGameButton } from "./newGameCardElement";
 const newGameButton = document.querySelector(".new-game");
 const main = document.querySelector("main");
 
-newGameButton.addEventListener("click", ()=> {
-  insertNewGameCard();
-});
+newGameButton.onclick = insertNewGameCard;
 
-startGameButton.addEventListener("click", ()=> {
-  startGame();
-});
+startGameButton.onclick  = startGame;
 
 export function insertNewGameCard() {
   // remove board if it exists

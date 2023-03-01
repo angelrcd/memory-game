@@ -1,4 +1,3 @@
-import { insertNewGameCard } from "./modules/startNewGame";
-import insertBoard from "./modules/insertBoard";
+import { insertNewGameCard } from "./modules/view/startNewGame";
 
 insertNewGameCard();
