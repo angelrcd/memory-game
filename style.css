@@ -1,0 +1,27 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  gap: 5px;
+}
+
+.small {
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.large {
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: lightgray;
+}
