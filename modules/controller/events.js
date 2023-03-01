@@ -3,9 +3,10 @@ import { startGameButton } from "../view/newGameCardElement";
 import insertBoard from "../view/insertBoard";
 import restartBoard from "../model/game";
 import { currentBoard } from "../model/game";
-import { setCheckCellElement } from "../view/checkCellElement";
+import { setCheckCellElement, clearAllChecksElement } from "../view/checkCellElement";
 
 const newGameButton = document.querySelector(".new-game");
+const restartButton = document.querySelector(".restart");
 
 // to delete //////////////////////////////////////////
 const testButton = document.querySelector(".test");
@@ -14,6 +15,12 @@ testButton.onclick = () => console.log(currentBoard);
 
 newGameButton.onclick = insertNewGameCard;
 startGameButton.onclick  = startGame;
+restartButton.onclick = ()=> {
+  const size = currentBoard.cellList.length;
+
+  restartBoard(size);
+  clearAllChecksElement();
+};
 
 function startGame() {
   const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
