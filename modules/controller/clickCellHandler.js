@@ -10,6 +10,11 @@ export default function clickCellHandler(fullCellData, cellsNodeList){
     return;
   }
 
+  // Clicking cell of an already guessed cell should do nothing
+  if (cellData.isGuessed){
+    return;
+  }
+
   setCheckCellElement(cellElement, cellData);
   currentBoard.checkCell(fullCellData);
   console.log(currentBoard.checkingList);
