@@ -3,13 +3,21 @@ import Cell from "./cellClass";
 export default class Board {
   constructor(boardSize) {
     this.cellList = shuffleArray(createArrOfCells(boardSize));
+    this.checkingList = [];
   }
 
-  checkIndexCell(index){
-    console.log(this.cellList);
-    console.log(index);
-    this.cellList[index].check();
+  getValueOfCellAt(index){
+    return this.cellList[index].value;
   }
+
+  checkCell(cell){
+    this.checkingList.push(cell);
+  }
+
+  emptyCheckList(){
+    this.checkingList.length = 0;
+  }
+
 }
 
 function createArrOfCells(length){

@@ -1,5 +1,4 @@
-export function setCheckCellElement(index){
-  const cell = document.querySelector(`.cell:nth-child(${index})`);
+export function setCheckCellElement(cell){
   cell.classList.add("check");
 }
 

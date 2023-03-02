@@ -3,14 +3,16 @@ import { startGameButton } from "../view/newGameCardElement";
 import insertBoard from "../view/insertBoard";
 import restartBoard from "../model/game";
 import { currentBoard } from "../model/game";
-import { setCheckCellElement, clearAllChecksElement } from "../view/checkCellElement";
+import { clearAllChecksElement } from "../view/checkCellElement";
+import getFullCellDataAt from "./getFullCellData";
+import clickCellHandler from "./clickCellHandler";
 
 const newGameButton = document.querySelector(".new-game");
 const restartButton = document.querySelector(".restart");
 
 // to delete //////////////////////////////////////////
 const testButton = document.querySelector(".test");
-testButton.onclick = () => console.log(currentBoard);
+testButton.onclick = () => console.log(currentBoard.cellList);
 ///////////////////////////////////////////////////////
 
 newGameButton.onclick = insertNewGameCard;
@@ -32,8 +34,8 @@ function startGame() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell, index) => {
     cell.addEventListener("click", ()=> {
-      setCheckCellElement(index+1);
-      currentBoard.checkIndexCell(index);
+      const fullCellData = getFullCellDataAt(index, cells);
+      clickCellHandler(fullCellData, cells);
     }
     );
   });
