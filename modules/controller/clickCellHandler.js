@@ -10,7 +10,7 @@ export default function clickCellHandler(fullCellData, cellsNodeList){
     return;
   }
 
-  setCheckCellElement(cellElement);
+  setCheckCellElement(cellElement, cellData);
   currentBoard.checkCell(cellData);
   console.log(currentBoard.checkingList);
 
