@@ -25,6 +25,11 @@
   height: 100px;
   border-radius: 50%;
   background: lightgray;
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: 600;
 }
 
 .check {
