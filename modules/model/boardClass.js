@@ -10,12 +10,21 @@ export default class Board {
     return this.cellList[index].value;
   }
 
-  checkCell(cell){
-    this.checkingList.push(cell);
+  checkCell(fullCellData){
+    this.checkingList.push(fullCellData);
   }
 
   emptyCheckList(){
     this.checkingList.length = 0;
+  }
+
+  compareCellsChecked(){
+    if (this.checkingList[0][0].value === this.checkingList[1][0].value){
+      this.checkingList[0][0].setGuessed();
+      this.checkingList[1][0].setGuessed();
+      return true;
+    }
+    return false;
   }
 
 }
