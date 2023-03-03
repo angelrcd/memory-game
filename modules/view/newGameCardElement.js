@@ -6,13 +6,17 @@ startGameButton.textContent = "GO";
 newGameCardElement.classList.add("new-game-card");
 
 newGameCardElement.innerHTML = `
-    <p>Start new game</p>
+    <p class="new-game-title">Start new game</p>
     <form name="board-size-selection" action="">
-      <p>Board Size:</p>
-      <input type="radio" name="board-size" value="small" id="small" checked>
-      <label for="small">Small</label>
-      <input type="radio" name="board-size" value="large" id="large">
-      <label for="large">Large</label>
+      <p>Board Size</p>
+      <div>
+        <input type="radio" name="board-size" value="small" id="small" checked>
+        <label for="small">Small</label>
+      </div>
+      <div>
+        <input type="radio" name="board-size" value="large" id="large">
+        <label for="large">Large</label>
+      </div>
     </form>
   `;
 
