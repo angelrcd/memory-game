@@ -9,15 +9,6 @@
   <title>Memory game</title>
 </head>
 <body>
-  <header class="top-bar">
-    <h1>memory</h1>
-    <div>
-      <button class="test pill-button">Test</button>
-      <button class="restart pill-button">Restart</button>
-      <button class="new-game pill-button">New Game</button>
-    </div>
-  </header>
-
   <dialog>
     <p class="new-game-title">Memory</p>
     <form name="board-size-selection" action="">
@@ -33,6 +24,19 @@
     </form>
     <button class="pill-button">GO</button>
   </dialog>
+  
+  <script>
+    document.querySelector("dialog").showModal()
+  </script>
+
+  <header class="top-bar">
+    <h1>memory</h1>
+    <div>
+      <button class="test pill-button">Test</button>
+      <button class="restart pill-button">Restart</button>
+      <button class="new-game pill-button">New Game</button>
+    </div>
+  </header>
 
   <main></main>
 
