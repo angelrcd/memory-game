@@ -1,6 +1,6 @@
 import insertBoard from "../view/insertBoard";
 import restartBoard from "../model/game";
-import { currentBoard } from "../model/game";
+import { currentBoard, theme } from "../model/game";
 import { clearAllChecksElement } from "../view/checkCellElement";
 import getFullCellDataAt from "./getFullCellData";
 import clickCellHandler from "./clickCellHandler";
@@ -37,6 +37,7 @@ function startGame() {
 
   const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
   const size = (boardSizeSelected === "small") ? 16 : 36;
+  const themeSelected = document.querySelector("input[name=select-theme]:checked").value;
 
   insertBoard(boardSizeSelected);
   restartBoard(size);
@@ -45,7 +46,7 @@ function startGame() {
   cells.forEach((cell, index) => {
     cell.addEventListener("click", ()=> {
       const fullCellData = getFullCellDataAt(index, cells);
-      clickCellHandler(fullCellData);
+      clickCellHandler(fullCellData, themeSelected);
     }
     );
   });

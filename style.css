@@ -75,6 +75,7 @@ main {
 
 dialog {
   width: 30%;
+  max-width: 400px;
   padding: 3rem;
   border: none;
   border-radius: 25px;
@@ -96,4 +97,27 @@ dialog::backdrop {
 dialog .pill-button {
   margin-top: 2em;
   width: 100%;
+}
+
+input {
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input:hover {
+  background-color: #e7e7e7;
+}
+
+input:checked {
+  border: 6px solid #FDA214;
 }

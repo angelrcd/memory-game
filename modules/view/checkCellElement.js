@@ -20,12 +20,16 @@ const icons = [
 
 ];
 
-export function setCheckCellElement(cell, cellData){
+export function setCheckCellElement(cell, cellData, theme){
+  console.log(theme);
   cell.classList.add("check");
-  // cell.textContent = cellData.value;
-  const img = document.createElement("img");
-  img.src = icons[cellData.value - 1];
-  cell.append(img);
+  if (theme === "numbers"){
+    cell.textContent = cellData.value;
+  } else {
+    const img = document.createElement("img");
+    img.src = icons[cellData.value - 1];
+    cell.append(img);
+  }
 }
 
 export function clearAllChecksElement() {

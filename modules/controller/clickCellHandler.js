@@ -2,7 +2,7 @@ import { setCheckCellElement, setGuessedCellElement } from "../view/checkCellEle
 import { currentBoard } from "../model/game";
 import { clearAllChecksElement, clearTextContent } from "../view/checkCellElement";
 
-export default function clickCellHandler(fullCellData){
+export default function clickCellHandler(fullCellData, theme){
   const [cellData, cellElement] = fullCellData;
 
   // Clicking cells should do nothing if you already have two cells selected
@@ -15,15 +15,15 @@ export default function clickCellHandler(fullCellData){
     return;
   }
 
-  setCheckCellElement(cellElement, cellData);
+  setCheckCellElement(cellElement, cellData, theme);
   currentBoard.checkCell(fullCellData);
   console.log(currentBoard.checkingList);
 
   if (currentBoard.checkingList.length === 2) {
     const isGuessCorrect = currentBoard.compareCellsChecked();
     if (isGuessCorrect){
-      setGuessedCellElement(currentBoard.checkingList[0][1], currentBoard.checkingList[0][0]);
-      setGuessedCellElement(currentBoard.checkingList[1][1], currentBoard.checkingList[1][0]);
+      setGuessedCellElement(currentBoard.checkingList[0][1], currentBoard.checkingList[0][0], theme);
+      setGuessedCellElement(currentBoard.checkingList[1][1], currentBoard.checkingList[1][0], theme);
     }
 
     setTimeout(() => {
