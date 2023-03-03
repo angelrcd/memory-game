@@ -1,3 +1,5 @@
+import { theme } from "../model/game";
+
 const icons = [
   "/anchor.svg",
   "/bell.svg",
@@ -20,7 +22,7 @@ const icons = [
 
 ];
 
-export function setCheckCellElement(cell, cellData, theme){
+export function setCheckCellElement(cell, cellData){
   console.log(theme);
   cell.classList.add("check");
   if (theme === "numbers"){
@@ -39,7 +41,7 @@ export function clearAllChecksElement() {
   });
 }
 
-export function setGuessedCellElement(cell, cellData){
+export function setGuessedCellElement(cell){
   cell.classList.add("guessed");
   // cell.textContent = cellData.value;
 }

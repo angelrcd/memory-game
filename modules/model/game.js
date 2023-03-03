@@ -4,6 +4,10 @@ import { clearAllGuessedElement, clearAllChecksElement, clearAllTextContent } fr
 export let currentBoard;
 export let theme;
 
+export function setTheme(themeSelected){
+  theme = themeSelected;
+}
+
 export default function restartBoard(size){
   currentBoard = new Board(size);
   clearAllChecksElement();
