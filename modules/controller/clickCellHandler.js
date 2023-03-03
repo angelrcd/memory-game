@@ -2,7 +2,7 @@ import { setCheckCellElement, setGuessedCellElement } from "../view/checkCellEle
 import { currentBoard } from "../model/game";
 import { clearAllChecksElement, clearTextContent } from "../view/checkCellElement";
 
-export default function clickCellHandler(fullCellData, cellsNodeList){
+export default function clickCellHandler(fullCellData){
   const [cellData, cellElement] = fullCellData;
 
   // Clicking cells should do nothing if you already have two cells selected

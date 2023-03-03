@@ -1,5 +1,3 @@
-import { insertNewGameCard } from "../view/startNewGame";
-import { startGameButton } from "../view/newGameCardElement";
 import insertBoard from "../view/insertBoard";
 import restartBoard from "../model/game";
 import { currentBoard } from "../model/game";
@@ -9,14 +7,21 @@ import clickCellHandler from "./clickCellHandler";
 
 const newGameButton = document.querySelector(".new-game");
 const restartButton = document.querySelector(".restart");
+const modal = document.querySelector("dialog");
+const startGameButton = document.querySelector("dialog button");
 
 // to delete //////////////////////////////////////////
 const testButton = document.querySelector(".test");
 testButton.onclick = () => console.log(currentBoard.cellList);
 ///////////////////////////////////////////////////////
 
-newGameButton.onclick = insertNewGameCard;
-startGameButton.onclick  = startGame;
+newGameButton.onclick = () => modal.showModal();
+
+startGameButton.onclick  =()=> {
+  startGame();
+  modal.close();
+};
+
 restartButton.onclick = ()=> {
   const size = currentBoard.cellList.length;
 
@@ -25,6 +30,11 @@ restartButton.onclick = ()=> {
 };
 
 function startGame() {
+
+  // Delete previous board if it exists
+  const pastBoard = document.querySelector(".board");
+  pastBoard?.remove();
+
   const boardSizeSelected = document.querySelector("input[name=board-size]:checked").value;
   const size = (boardSizeSelected === "small") ? 16 : 36;
 
@@ -35,7 +45,7 @@ function startGame() {
   cells.forEach((cell, index) => {
     cell.addEventListener("click", ()=> {
       const fullCellData = getFullCellDataAt(index, cells);
-      clickCellHandler(fullCellData, cells);
+      clickCellHandler(fullCellData);
     }
     );
   });

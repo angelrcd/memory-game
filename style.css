@@ -69,12 +69,17 @@ main {
   background: #fda414c2;
 }
 
-.new-game-card {
+dialog {
   width: 30%;
   padding: 3rem;
-  border-radius: 5%;
-  background: red;
+  border: none;
+  border-radius: 25px;
+  background: #FCFCFC;
   color: #304859;
+}
+
+dialog::backdrop {
+  background-color: #152938;
 }
 
 .new-game-title {
@@ -84,7 +89,7 @@ main {
   font-size: 1.2em;
 }
 
-.new-game-card .pill-button {
+dialog .pill-button {
   margin-top: 2em;
   width: 100%;
 }
