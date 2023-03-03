@@ -54,6 +54,10 @@ main {
   background: #BCCED9;
 }
 
+.cell img {
+  height: 70%
+}
+
 .pill-button {
   background: #FDA214;
   color: white;

@@ -1,6 +1,31 @@
+const icons = [
+  "/anchor.svg",
+  "/bell.svg",
+  "/check.svg",
+  "/crown.svg",
+  "/gear.svg",
+  "/gifts.svg",
+  "/shop.svg",
+  "/smile.svg",
+  "/star.svg",
+  "/thumbs.svg",
+  "/atom.svg",
+  "/drink.svg",
+  "/lamp.svg",
+  "/music.svg",
+  "/target.svg",
+  "/spade.svg",
+  "/clover.svg",
+  "/snowman.svg",
+
+];
+
 export function setCheckCellElement(cell, cellData){
   cell.classList.add("check");
-  cell.textContent = cellData.value;
+  // cell.textContent = cellData.value;
+  const img = document.createElement("img");
+  img.src = icons[cellData.value - 1];
+  cell.append(img);
 }
 
 export function clearAllChecksElement() {
@@ -12,7 +37,7 @@ export function clearAllChecksElement() {
 
 export function setGuessedCellElement(cell, cellData){
   cell.classList.add("guessed");
-  cell.textContent = cellData.value;
+  // cell.textContent = cellData.value;
 }
 
 export function clearAllGuessedElement() {
