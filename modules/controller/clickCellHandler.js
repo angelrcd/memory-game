@@ -3,6 +3,9 @@ import { currentBoard } from "../model/game";
 import { clearAllChecksElement, clearTextContent } from "../view/checkCellElement";
 import { setMovesCounter } from "../view/counterElements";
 
+const correctAudio = new Audio("/sound/correct.wav");
+correctAudio.volume = 0.5;
+
 export default function clickCellHandler(fullCellData){
   const [cellData, cellElement] = fullCellData;
 
@@ -28,6 +31,7 @@ export default function clickCellHandler(fullCellData){
     
     const isGuessCorrect = currentBoard.compareCellsChecked();
     if (isGuessCorrect){
+      correctAudio.play();
       setGuessedCellElement(currentBoard.checkingList[0][1], currentBoard.checkingList[0][0]);
       setGuessedCellElement(currentBoard.checkingList[1][1], currentBoard.checkingList[1][0]);
     }
