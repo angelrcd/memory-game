@@ -1,6 +1,7 @@
 import { setCheckCellElement, setGuessedCellElement } from "../view/checkCellElement";
 import { currentBoard } from "../model/game";
 import { clearAllChecksElement, clearTextContent } from "../view/checkCellElement";
+import { setMovesCounter } from "../view/counterElements";
 
 export default function clickCellHandler(fullCellData){
   const [cellData, cellElement] = fullCellData;
@@ -20,6 +21,11 @@ export default function clickCellHandler(fullCellData){
   console.log(currentBoard.checkingList);
 
   if (currentBoard.checkingList.length === 2) {
+    // Increases and displays the moves count
+    currentBoard.movesCounter++;
+    setMovesCounter(currentBoard.movesCounter);
+
+    
     const isGuessCorrect = currentBoard.compareCellsChecked();
     if (isGuessCorrect){
       setGuessedCellElement(currentBoard.checkingList[0][1], currentBoard.checkingList[0][0]);

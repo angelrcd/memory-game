@@ -4,6 +4,7 @@ export default class Board {
   constructor(boardSize) {
     this.cellList = shuffleArray(createArrOfCells(boardSize));
     this.checkingList = [];
+    this.movesCounter = 0;
   }
 
   getValueOfCellAt(index){

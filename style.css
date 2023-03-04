@@ -121,3 +121,17 @@ input:hover {
 input:checked {
   border: 6px solid #FDA214;
 }
+
+.counters-container {
+  margin-top: 5em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.counter {
+  width: 5em;
+  padding: 0 1em;
+  border-radius: 10px;
+  text-align: center;
+  background: #DFE7EC;
+}

@@ -4,6 +4,7 @@ import { currentBoard, setTheme } from "../model/game";
 import { clearAllChecksElement } from "../view/checkCellElement";
 import getFullCellDataAt from "./getFullCellData";
 import clickCellHandler from "./clickCellHandler";
+import { setMovesCounter } from "../view/counterElements";
 
 const newGameButton = document.querySelector(".new-game");
 const restartButton = document.querySelector(".restart");
@@ -18,11 +19,17 @@ testButton.onclick = () => console.log(currentBoard.cellList);
 newGameButton.onclick = () => modal.showModal();
 
 startGameButton.onclick  =()=> {
+  // Reset moves counter
+  setMovesCounter(0);
+
   startGame();
   modal.close();
 };
 
 restartButton.onclick = ()=> {
+  // Reset moves counter
+  setMovesCounter(0);
+
   const size = currentBoard.cellList.length;
 
   restartBoard(size);
