@@ -4,7 +4,8 @@ import { currentBoard, setTheme } from "../model/game";
 import { clearAllChecksElement } from "../view/checkCellElement";
 import getFullCellDataAt from "./getFullCellData";
 import clickCellHandler from "./clickCellHandler";
-import { setMovesCounter } from "../view/counterElements";
+import { setMovesCounter, setTimeCounterNode } from "../view/counterElements";
+import { startTimer, setTimerToZero } from "../model/timer";
 
 const newGameButton = document.querySelector(".new-game");
 const restartButton = document.querySelector(".restart");
@@ -19,16 +20,18 @@ testButton.onclick = () => console.log(currentBoard.cellList);
 newGameButton.onclick = () => modal.showModal();
 
 startGameButton.onclick  =()=> {
-  // Reset moves counter
+  // Reset moves counter and timer counter
   setMovesCounter(0);
+  setTimerToZero(setTimeCounterNode);
 
   startGame();
   modal.close();
 };
 
 restartButton.onclick = ()=> {
-  // Reset moves counter
+  // Reset moves and timer counter
   setMovesCounter(0);
+  setTimerToZero(setTimeCounterNode);
 
   const size = currentBoard.cellList.length;
 
@@ -54,6 +57,7 @@ function startGame() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell, index) => {
     cell.addEventListener("click", ()=> {
+      startTimer(setTimeCounterNode);
       const fullCellData = getFullCellDataAt(index, cells);
       clickCellHandler(fullCellData);
     }
