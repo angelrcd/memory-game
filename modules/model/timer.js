@@ -1,8 +1,8 @@
 let timerInterval;
 let timer = 0, minutes, seconds;
 
-export function startTimer(printToScreen) {
-  if (timerInterval){
+export function startTimer(printToScreen, isGameOver) {
+  if (timerInterval || isGameOver){
     return;
   }
 

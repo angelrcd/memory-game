@@ -57,7 +57,7 @@ function startGame() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell, index) => {
     cell.addEventListener("click", ()=> {
-      startTimer(setTimeCounterNode);
+      startTimer(setTimeCounterNode, currentBoard.isGameOver());
       const fullCellData = getFullCellDataAt(index, cells);
       clickCellHandler(fullCellData);
     }
