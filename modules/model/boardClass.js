@@ -28,6 +28,16 @@ export default class Board {
     return false;
   }
 
+  isGameOver(){
+    for (const cell of this.cellList) {
+      console.log(this.cellList);
+      if (!cell.isGuessed){
+        return false;
+      }
+    }
+    return true;
+  }
+
 }
 
 function createArrOfCells(length){

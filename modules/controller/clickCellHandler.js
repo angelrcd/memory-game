@@ -2,6 +2,8 @@ import { setCheckCellElement, setGuessedCellElement } from "../view/checkCellEle
 import { currentBoard } from "../model/game";
 import { clearAllChecksElement, clearTextContent } from "../view/checkCellElement";
 import { setMovesCounter } from "../view/counterElements";
+import { setTimerToZero } from "../model/timer";
+import { setTimeCounterNode } from "../view/counterElements";
 
 const correctAudio = new Audio("/sound/correct.wav");
 correctAudio.volume = 0.5;
@@ -34,6 +36,17 @@ export default function clickCellHandler(fullCellData){
       correctAudio.play();
       setGuessedCellElement(currentBoard.checkingList[0][1], currentBoard.checkingList[0][0]);
       setGuessedCellElement(currentBoard.checkingList[1][1], currentBoard.checkingList[1][0]);
+
+      // check if all cells have been guessed
+      if (currentBoard.isGameOver()){
+        const time = document.querySelector(".time-counter p:nth-child(2)").textContent;
+        console.log(time);
+
+        setTimerToZero(setTimeCounterNode);
+        setTimeCounterNode(time);
+        
+        console.log("Ganasteeee!!!");
+      }
     }
 
     setTimeout(() => {
