@@ -21,6 +21,11 @@ export default function clickCellHandler(fullCellData){
     return;
   }
 
+  // Check if you are clicking the same cell that is already being checked
+  if (currentBoard.checkingList[0] && (cellElement === currentBoard.checkingList[0][1])){
+    return;
+  }
+
   setCheckCellElement(cellElement, cellData);
   currentBoard.checkCell(fullCellData);
   console.log(currentBoard.checkingList);
