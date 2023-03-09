@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <title>Memory game</title>
+  <script type="module" crossorigin src="/memory-game/assets/index-e29a9f95.js"></script>
+  <link rel="stylesheet" href="/memory-game/assets/index-421da477.css">
+</head>
+<body>
+  <dialog>
+    <p class="new-game-title">Memory</p>
+    <form name="board-size-selection" action="">
+      <p>Board Size</p>
+      <div class="input-container">
+        <input type="radio" name="board-size" value="small" id="small" checked>
+        <label for="small">Small</label>
+      </div>
+      <div class="input-container">
+        <input type="radio" name="board-size" value="large" id="large">
+        <label for="large">Large</label>
+      </div>
+
+      <p>Select theme</p>
+      <div class="input-container">
+        <input type="radio" name="select-theme" value="icons" id="icons" checked>
+        <label for="icons">Icons</label>
+      </div>
+      <div class="input-container">
+        <input type="radio" name="select-theme" value="numbers" id="numbers">
+        <label for="numbers">Numbers</label>
+      </div>
+    </form>
+    <button class="pill-button">GO</button>
+  </dialog>
+  
+  <script>
+    document.querySelector("dialog").showModal()
+  </script>
+
+  <header class="top-bar">
+    <h1>memory</h1>
+    <div>
+      <button class="test pill-button">Test</button>
+      <button class="restart pill-button">Restart</button>
+      <button class="new-game pill-button">New Game</button>
+    </div>
+  </header>
+
+  <main></main>
+
+  <div class="counters-container">
+    <div class="counter time-counter">
+      <p>Time</p>
+      <p></p>
+    </div>
+    <div class="counter moves-counter">
+      <p>Moves</p>
+      <p></p>
+    </div>
+  </div>
+
+</body>
+</html>
