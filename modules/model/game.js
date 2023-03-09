@@ -13,5 +13,4 @@ export default function restartBoard(size){
   clearAllChecksElement();
   clearAllGuessedElement();
   clearAllTextContent();
-
 }
