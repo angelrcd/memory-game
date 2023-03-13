@@ -6,6 +6,8 @@ import getFullCellDataAt from "./getFullCellData";
 import clickCellHandler from "./clickCellHandler";
 import { setMovesCounter, setTimeCounterNode } from "../view/counterElements";
 import { startTimer, setTimerToZero } from "../model/timer";
+// borrar este import
+import getGameWinModal from "../view/GameWinDialog";
 
 const newGameButton = document.querySelector(".new-game");
 const restartButton = document.querySelector(".restart");
@@ -14,7 +16,11 @@ const startGameButton = document.querySelector("dialog button");
 
 // to delete //////////////////////////////////////////
 const testButton = document.querySelector(".test");
-testButton.onclick = () => console.log(currentBoard.cellList);
+testButton.onclick = () => {
+  console.log(currentBoard.cellList);
+  const winModal = getGameWinModal(4, 3);
+  winModal.showModal();
+};
 ///////////////////////////////////////////////////////
 
 newGameButton.onclick = () => modal.showModal();

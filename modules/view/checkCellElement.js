@@ -23,7 +23,6 @@ const icons = [
 ];
 
 export function setCheckCellElement(cell, cellData){
-  console.log(theme);
   cell.classList.add("check");
   if (theme === "numbers"){
     cell.textContent = cellData.value;

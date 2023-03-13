@@ -30,7 +30,6 @@ export default class Board {
 
   isGameOver(){
     for (const cell of this.cellList) {
-      console.log(this.cellList);
       if (!cell.isGuessed){
         return false;
       }

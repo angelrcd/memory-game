@@ -4,8 +4,9 @@ import { clearAllChecksElement, clearTextContent } from "../view/checkCellElemen
 import { setMovesCounter } from "../view/counterElements";
 import { setTimerToZero } from "../model/timer";
 import { setTimeCounterNode } from "../view/counterElements";
+import getGameWinModal from "../view/GameWinDialog";
 
-const correctAudio = new Audio("/sound/correct.wav");
+const correctAudio = new Audio("sound/correct.wav");
 correctAudio.volume = 0.5;
 
 export default function clickCellHandler(fullCellData){
@@ -28,7 +29,6 @@ export default function clickCellHandler(fullCellData){
 
   setCheckCellElement(cellElement, cellData);
   currentBoard.checkCell(fullCellData);
-  console.log(currentBoard.checkingList);
 
   if (currentBoard.checkingList.length === 2) {
     // Increases and displays the moves count
@@ -45,12 +45,14 @@ export default function clickCellHandler(fullCellData){
       // check if all cells have been guessed
       if (currentBoard.isGameOver()){
         const time = document.querySelector(".time-counter p:nth-child(2)").textContent;
-        console.log(time);
+        const moves = document.querySelector(".moves-counter p:nth-child(2)").textContent;
 
         setTimerToZero(setTimeCounterNode);
         setTimeCounterNode(time);
         
         console.log("Ganasteeee!!!");
+        const gameWinModal = getGameWinModal(time, moves);
+        gameWinModal.showModal();
       }
     }
 
