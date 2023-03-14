@@ -7,8 +7,8 @@
   
   
   <title>Memory game</title>
-  <script type="module" crossorigin src="/memory-game/assets/index-8c20ebc9.js"></script>
-  <link rel="stylesheet" href="/memory-game/assets/index-421da477.css">
+  <script type="module" crossorigin src="/memory-game/assets/index-d7ea1f0a.js"></script>
+  <link rel="stylesheet" href="/memory-game/assets/index-2e3f0cb5.css">
 </head>
 <body>
   <dialog>
@@ -35,6 +35,21 @@
       </div>
     </form>
     <button class="pill-button">GO</button>
+  </dialog>
+  
+  <dialog id="game-win-modal">
+    <p>You won!</p>
+    <div class="results-container">
+      <div>
+        <p>Time</p>
+        <p class="time-result"></p>
+      </div>
+      <div>
+        <p>Moves</p>
+        <p class="moves-result"></p>
+      </div>
+    </div>
+    <button class = "pill-button play-again-button">Start new game</button>
   </dialog>
   
   <script>
