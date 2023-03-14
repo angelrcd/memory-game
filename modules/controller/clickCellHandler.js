@@ -4,7 +4,7 @@ import { clearAllChecksElement, clearTextContent } from "../view/checkCellElemen
 import { setMovesCounter } from "../view/counterElements";
 import { setTimerToZero } from "../model/timer";
 import { setTimeCounterNode } from "../view/counterElements";
-import getGameWinModal from "../view/GameWinDialog";
+import { showGameWinModal } from "./GameWinModal";
 
 const correctAudio = new Audio("sound/correct.wav");
 correctAudio.volume = 0.5;
@@ -51,8 +51,7 @@ export default function clickCellHandler(fullCellData){
         setTimeCounterNode(time);
         
         console.log("Ganasteeee!!!");
-        const gameWinModal = getGameWinModal(time, moves);
-        gameWinModal.showModal();
+        showGameWinModal(time, moves);
       }
     }
 
