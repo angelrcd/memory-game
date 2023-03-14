@@ -3,8 +3,8 @@ const timeResult = document.querySelector(".time-result");
 const movesResult = document.querySelector(".moves-result");
 
 function setGameWinModal(time, moves){
-  timeResult.textContent = "Time: " + time;
-  movesResult.textContent = "Moves: " + moves;
+  timeResult.textContent = time;
+  movesResult.textContent = moves;
 }
 
 export function showGameWinModal(time, moves){
